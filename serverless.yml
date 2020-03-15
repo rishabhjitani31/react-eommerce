@@ -1,0 +1,27 @@
+#org: teamfabric
+app: bailey-web
+service:  
+  name: bailey-web
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage:  ${opt:stage,'development'}
+  region: ${opt:region, 'us-east-1'} # our default region
+  logRetentionInDays: 3
+  memorySize: 1024 # default is 1024
+  environment:
+    NODE_ENV: ${self:provider.stage}
+package:
+  exclude:
+    - ./**
+
+plugins:
+  - serverless-nextjs-plugin
+
+
+custom:
+    serverless-nextjs:
+      nextConfigDir: ./
+      assetsBucketName: ${self:provider.stage}-${self:service.name}
+      
+      
