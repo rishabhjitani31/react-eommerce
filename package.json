@@ -37,7 +37,7 @@
     "invariant": "^2.2.4",
     "is-email-maybe": "^1.0.1",
     "lodash": "^4.17.15",
-    "next": "8.0.3",
+    "next": "9.3.2",
     "next-images": "^1.2.0",
     "next-redux-saga": "^4.1.2",
     "next-redux-wrapper": "^2.0.0",
